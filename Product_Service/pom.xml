@@ -13,7 +13,11 @@
 	<artifactId>Product_Service</artifactId>
 	<version>v1.0</version>
 	<name>Product_Service</name>
-	<description>Ecommerce online shopping Project.</description>
+	<description>Ecommerce online shopping Project.
+		
+		Warning: This application has too many dependencies. Hence I am using all versions as per guide.
+		         Try to don't chnage versions.
+	</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
