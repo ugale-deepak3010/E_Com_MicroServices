@@ -11,11 +11,11 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Data
 @Table(name = "t_inventory")
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
 public class Inventory {
 
 	@Id
