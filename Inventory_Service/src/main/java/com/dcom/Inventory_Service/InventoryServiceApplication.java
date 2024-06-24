@@ -8,10 +8,13 @@ import org.springframework.context.annotation.Bean;
 import com.dcom.Inventory_Service.Model.Inventory;
 import com.dcom.Inventory_Service.Repository.InventoryRepo;
 
+
 @SpringBootApplication
 public class InventoryServiceApplication {
 
 	public static void main(String[] args) {
+		
+//		Discovery Server dependency is added. Discovery Service must be up.
 
 		SpringApplication.run(InventoryServiceApplication.class, args);
 
