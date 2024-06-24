@@ -23,8 +23,11 @@ public class OrderService {
 	@Autowired
 	private OrderRepo orderRepo;
 
+//	@Autowired
+//	WebClient webClient ;
+
 	@Autowired
-	WebClient webClient ;
+	WebClient.Builder webClientBuilder ;
 
 	
 	public boolean placeOrder(OrderRequest orderRequest) throws IllegalAccessException {
@@ -64,17 +67,22 @@ public class OrderService {
 				.skuCode(orderLineItemDTO.getSkuCode()).build();
 	}
 
-	public boolean isSkuInStock(String skuCode) {
-
-		return webClient.get().uri("http://localhost:8083/api/inventory/" + skuCode).retrieve().bodyToMono(Boolean.class)
-				.block();
-	}
+	//not using this function
+//	public boolean isSkuInStock(String skuCode) {
+//
+//		return webClient.get().uri("http://localhost:8083/api/inventory/" + skuCode).retrieve().bodyToMono(Boolean.class)
+//				.block();
+//	}
 
 	public InventoryResponse[] inventoryResponseArray(List<String> skuCodeList) {
 
-		return webClient.get()
+		System.err.println("Calling...");
+		
+		//return webClient.get()
+		return webClientBuilder.build().get()
 				//.uri("http://localhost:8083/api/inventory?skuCodes="+skuCodeList.get(0))
-				.uri("http://localhost:8083/api/inventory", 
+				//.uri("http://localhost:8083/api/inventory", 
+				.uri("http://InventoryService/api/inventory", 
 						uriBuilder -> uriBuilder.queryParam("skuCodes", skuCodeList).build())
 				.retrieve()
 				.bodyToMono(InventoryResponse[].class)
