@@ -9,7 +9,13 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 public class DiscoveryServerApplication {
 
 	public static void main(String[] args) {
+		
+		System.err.println("Main Is called start!");
+		
 		SpringApplication.run(DiscoveryServerApplication.class, args);
+		
+		
+		System.err.println("Main Is called end!");
 	}
 
 }
