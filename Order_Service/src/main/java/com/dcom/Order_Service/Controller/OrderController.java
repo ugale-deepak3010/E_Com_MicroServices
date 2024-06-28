@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.dcom.Order_Service.DTO.OrderRequest;
 import com.dcom.Order_Service.Service.OrderService;
 
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -32,6 +33,13 @@ public class OrderController {
 		boolean b= orderService.placeOrder(orderRequest);
 
 		return b?"Order placed successfully!":"Failed to order!";
+	}
+	
+	
+	public String deepFallBackMethod( OrderRequest orderRequest, RuntimeException runtimeExceptions) {
+		
+		
+		return "Ooops! something went wrong with inventory service. please order after sometime!";
 	}
 
 }
