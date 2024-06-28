@@ -29,5 +29,5 @@ https://www.keycloak.org/getting-started/getting-started-docker#:~:text=have%20D
 http://localhost:8181/
 
 
-
+**Due to some dependencies are not working properly with current versions. Hence closing this project!**
 
